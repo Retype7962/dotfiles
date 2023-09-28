@@ -1,0 +1,11 @@
+user_pref("browser.warnOnQuitShortcut", false);
+user_pref("privacy.resistFingerprinting", false);
+user_pref("layout.css.prefers-color-scheme.content-override", 2);
+user_pref("privacy.donottrackheader.enabled", true);
+user_pref("permissions.default.desktop-notification", 2);
+user_pref("privacy.clearOnShutdown.cache", true);
+user_pref("privacy.clearOnShutdown.cookies", true);
+user_pref("privacy.clearOnShutdown.offlineApps", true);
+user_pref("signon.management.page.breach-alerts.enabled", false);
+user_pref("identity.fxaccounts.enabled", true);
+user_pref("browser.toolbars.bookmarks.visibility", "always")

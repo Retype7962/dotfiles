@@ -1,0 +1,72 @@
+window_padding_width 4
+
+enabled_layouts splits
+
+#: My custom shortcut {{{
+
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed one above the other
+map alt+shift+enter launch --location=hsplit
+
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed side by side
+map alt+enter launch --location=vsplit
+
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed side by side if the existing window is wide or
+# one above the other if the existing window is tall.
+#map alt+enter launch --location=split
+
+# Rotate the current split, changing its split axis from vertical to
+# horizontal or vice versa
+map alt+o layout_action rotate
+
+# Move the active window in the indicated direction
+map alt+shift+up move_window up
+map alt+shift+left move_window left
+map alt+shift+right move_window right
+map alt+shift+down move_window down
+
+# Move the active window to the indicated screen edge
+map ctrl+shift+up layout_action move_to_screen_edge top
+map ctrl+shift+left layout_action move_to_screen_edge left
+map ctrl+shift+right layout_action move_to_screen_edge right
+map ctrl+shift+down layout_action move_to_screen_edge bottom
+
+# Switch focus to the neighboring window in the indicated direction
+map alt+left neighboring_window left
+map alt+right neighboring_window right
+map alt+up neighboring_window up
+map alt+down neighboring_window down
+
+# Resizing windows on the fly
+map alt+shift+l resize_window narrower 3
+map alt+shift+j resize_window wider 3
+map alt+shift+i resize_window taller 3
+map alt+shift+k resize_window shorter 3
+# reset all windows in the tab to default sizes
+map alt+shift+r resize_window reset
+
+#: Window management {{{
+
+map alt+n new_os_window
+map alt+w close_window
+map alt+r start_resizing_window
+
+#: }}}
+
+#: Tab management {{{
+
+map alt+t     new_tab
+map alt+q     close_tab
+map ctrl+tab     next_tab
+
+#: }}}
+
+#: }}}
+
+
+# BEGIN_KITTY_THEME
+# Square
+include current-theme.conf
+# END_KITTY_THEME
