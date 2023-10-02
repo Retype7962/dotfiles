@@ -44,6 +44,8 @@ do
 
         librewolf/)
             link_files "`find_librewolf_dir`"
+            mkdir -p "$HOME/.librewolf"
+            ln -sf "$git_dir${dir}override/librewolf.overrides.cfg" "$HOME/.librewolf/librewolf.overrides.cfg"
             echo "successfuly linked ${dir%/}"
             ;;
         
