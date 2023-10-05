@@ -9,3 +9,4 @@ user_pref("privacy.clearOnShutdown.offlineApps", true);
 user_pref("signon.management.page.breach-alerts.enabled", false);
 user_pref("identity.fxaccounts.enabled", true);
 user_pref("browser.toolbars.bookmarks.visibility", "always")
+user_pref("media.eme.enabled", "true")
