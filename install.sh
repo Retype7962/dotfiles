@@ -1,7 +1,7 @@
 #! /bin/bash
 
 if [ ! "`pwd`" == "$HOME/Git/dotfiles" ]; then
-    echo "You must be in the root of dotfiles" && exit 1
+    echo "You must be in the root folder of the dotfiles repository" && exit 1
 fi
 
 git_dir="$HOME/Git/dotfiles/"
@@ -16,26 +16,11 @@ function link_files
     done
 }
 
-function find_librewolf_dir
-{
-    if [ ! -z "`ls -d $HOME/.librewolf/*.default-default/ 2>/dev/null`" ]
-    then
-        echo "Librewolf config in default Linux directory" >&2
-        echo "`ls -d $HOME/.librewolf/*.default-default/`"
-    elif [ ! -z "`ls -d $HOME/Library/Application\ Support/librewolf/Profiles/*.default-default/ 2>/dev/null`" ]
-    then
-        echo "Librewolf config in default MacOS directory" >&2
-        echo "`ls -d $HOME/Library/Application\ Support/librewolf/Profiles/*.default-default/`"
-    else
-        echo "Librewolf config not found, this will not succeed" >&2
-    fi
-}
-
 for dir in `ls -d */`
 do    
     case "$dir" in
-	git/)
-	    ;;
+	    git/)
+	        ;;
 
         kitty/)
             link_files "$HOME/.config/kitty/"
@@ -43,9 +28,7 @@ do
             ;;
 
         librewolf/)
-            link_files "`find_librewolf_dir`"
-            mkdir -p "$HOME/.librewolf"
-            ln -sf "$git_dir${dir}override/librewolf.overrides.cfg" "$HOME/.librewolf/librewolf.overrides.cfg"
+            link_files "$HOME/.librewolf/"
             echo "successfuly linked ${dir%/}"
             ;;
         
