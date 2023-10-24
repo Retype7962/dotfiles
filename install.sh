@@ -1,10 +1,11 @@
 #! /bin/bash
 
-if [ ! "`pwd`" == "$HOME/Git/dotfiles" ]; then
+git_dir="$HOME/Git/dotfiles/"
+
+if [ ! "`pwd`/" == "$git_dir" ]
+then
     echo "You must be in the root folder of the dotfiles repository" && exit 1
 fi
-
-git_dir="$HOME/Git/dotfiles/"
 
 function link_files 
 {
@@ -12,6 +13,7 @@ function link_files
     mkdir -p "${1}"
     for file in `ls "$dir"`
     do
+        #echo "linking $git_dir$dir$file to ${1}${file}"
         ln -sf "$git_dir$dir$file" "${1}${file}"
     done
 }
