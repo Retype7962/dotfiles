@@ -22,7 +22,6 @@ setopt HIST_NO_STORE # Do not store the history command in history
 setopt HIST_REDUCE_BLANKS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY # When using history expansion (!!), you have to press enter to execute the command
-setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
 # Changing Directories
